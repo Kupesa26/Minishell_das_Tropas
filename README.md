@@ -34,4 +34,5 @@ O *minishell* inclui as seguintes funcionalidades:
    ```bash
    git clone https://github.com/Kupesa26/Minishell_das_Tropas.git
    cd minishell
+   cd minishell
    make
