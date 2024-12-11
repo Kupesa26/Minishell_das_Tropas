@@ -12,19 +12,50 @@
 
 #include "minishell.h"
 
-void	parse_and_execute(char *line)
+void parse_and_execute(char *line)
 {
-	char *args[1000];
-	int	i;
-	char	*token;
+    char *args[1000];
+    int i = 0;
+    char *token;
 
-	i = 0;
-	token = strtok(line, " \n");
-	while (token)
+    token = strtok(line, " \n");
+    while (token)
+    {
+        args[i++] = token;
+        token = strtok(NULL, " \n");
+    }
+    args[i] = NULL;
+
+    // Verificar comandos built-in
+    if (args[0] == NULL)
+        return; // Comando vazio
+
+    if (strcmp(args[0], "cd") == 0)
+    {
+        handle_cd(args);
+    }
+	if (strcmp(args[0], "echo") == 0)
 	{
-		args[i++] = token;
-		token = strtok(NULL, " \n");
+		handle_echo(args);
 	}
-	args[i] = NULL;
-	execute_command(args);
+	if (strcmp(args[0], "export") == 0)
+	{
+    	handle_export(args);
+	}
+	if (strcmp(args[0], "env") == 0)
+	{
+		handle_env();
+	}
+    else if (strcmp(args[0], "pwd") == 0)
+    {
+        handle_pwd();
+    }
+    else if (strcmp(args[0], "exit") == 0)
+    {
+        handle_exit(args);
+    }
+    else
+    {
+        execute_command(args); // Outros comandos
+    }
 }
