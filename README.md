@@ -1,6 +1,6 @@
 ## Espaço para novas alterações
 - nome -> alterações
-- Ex.: Eliandro -> implementou o coisinho
+- Ex.: Anderson -> melhoramento das built-ins
 
 
 # Minishell_das_Tropas
