@@ -14,54 +14,77 @@
 
 void	execute_command(char **args)
 {
-	if (fork() == 0)
+	int	status;
+	pid_t	pid;
+
+	pid = fork();
+	if (pid == -1)
 	{
-		execvp(args[0], args);
-		perror("execvp failed");
-		exit(1);
+		perror("minishell: fork");
+		return ;
+	}
+	else if (pid == 0)
+	{
+		if (execvp(args[0], args) == -1)
+		{
+			perror("minishell");
+			exit(EXIT_FAILURE);
+		}
 	}
 	else
 	{
-		wait(NULL);
+		waitpid(pid, &status, 0);
 	}
 }
 
-void handle_cd(char **args)
+void	ft_cd(char **args)
 {
-    if (args[1] == NULL) // Sem argumentos
-    {
-        printf("minishell: cd: expected argument\n");
-    }
-    else if (chdir(args[1]) != 0) // Mudar diretório
-    {
-        perror("minishell: cd");
-    }
+	char	*home;
+
+	if (args[1] == NULL)
+	{
+		home = getenv("HOME");
+		if (!home)
+		{
+			fprintf(stderr, "minishell: cd: HOME not set\n");
+			return ;
+		}
+		if (chdir(home) != 0)
+			perror("mininshell: cd");
+	}
+	else if (chdir(args[1]) != 0)
+		perror("minishell: cd");
 }
 
-void handle_pwd(void)
+void	ft_pwd(void)
 {
-    char cwd[1024];
-    if (getcwd(cwd, sizeof(cwd)) != NULL)
-    {
-        printf("%s\n", cwd);
-    }
-    else
-    {
-        perror("minishell: pwd");
-    }
+	char	path[PATH_MAX];
+
+	if (getcwd(path, PATH_MAX) != NULL)
+		printf("%s\n", cwd);
+	else
+		perror("minishell: pwd");
 }
 
-void handle_exit(char **args)
+void	ft__exit(char **args)
 {
-    int exit_code = 0;
-    if (args[1] != NULL) // Verificar argumento
-    {
-        exit_code = atoi(args[1]);
-    }
-    exit(exit_code);
+	int		exit_code;
+	char	*end;
+
+	exit_code = 0;
+	if (args[1] != NULL) // Verificar argumento
+	{
+		exit_code = strtol(args[1], &end, 10);
+		if (*end != '\0')
+		{
+			fprintf(stderr, "minishell: exit: %s: numeric argument required\n", args[1]);
+			exit_code = 255;
+		}
+	}
+	exit(exit_code);
 }
 
-void	handle_echo(char **args)
+void	ft_echo(char **args)
 {
 	int		i;
 	int		newline;
@@ -83,31 +106,4 @@ void	handle_echo(char **args)
 	}
 	if (newline)
 		printf("\n");
-}
-
-void	handle_env(void)
-{
-	int		i;
-	extern char		**environ;
-
-	i = 0;
-	while (environ[i])
-	{
-		printf("%s\n", environ[i]);
-		i++;
-	}
-}
-
-void handle_export(char **args)
-{
-    if (args[1] == NULL)
-    {
-        fprintf(stderr, "minishell: export: expected argument\n");
-        return;
-    }
-
-    if (putenv(args[1]) != 0) // Formato esperado: VAR=value
-    {
-        perror("minishell: export");
-    }
 }
