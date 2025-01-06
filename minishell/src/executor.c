@@ -14,7 +14,7 @@
 
 void	execute_command(char **args)
 {
-	int	status;
+	int		status;
 	pid_t	pid;
 
 	pid = fork();
@@ -37,23 +37,24 @@ void	execute_command(char **args)
 	}
 }
 
-void	ft_cd(char **args)
+void ft_cd(char **args)
 {
-	char	*home;
-
-	if (args[1] == NULL)
-	{
-		home = getenv("HOME");
-		if (!home)
-		{
-			fprintf(stderr, "minishell: cd: HOME not set\n");
-			return ;
-		}
-		if (chdir(home) != 0)
-			perror("mininshell: cd");
-	}
-	else if (chdir(args[1]) != 0)
-		perror("minishell: cd");
+    if (args[1] == NULL)
+    {
+        char *home = getenv("HOME");
+        if (!home)
+        {
+            fprintf(stderr, "minishell: cd: HOME not set\n");
+            return;
+        }
+        if (chdir(home) != 0)
+            fprintf(stderr, "minishell: cd: %s: %s\n", home, strerror(errno));
+    }
+    else if (chdir(args[1]) != 0)
+    {
+        // Aqui está a melhoria principal
+        fprintf(stderr, "minishell: cd: %s: %s\n", args[1], strerror(errno));
+    }
 }
 
 void	ft_pwd(void)
@@ -61,12 +62,12 @@ void	ft_pwd(void)
 	char	path[PATH_MAX];
 
 	if (getcwd(path, PATH_MAX) != NULL)
-		printf("%s\n", cwd);
+		printf("%s\n", path);
 	else
 		perror("minishell: pwd");
 }
 
-void	ft__exit(char **args)
+void	ft_exit(char **args)
 {
 	int		exit_code;
 	char	*end;
