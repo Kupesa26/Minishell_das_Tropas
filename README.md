@@ -1,6 +1,6 @@
 ## Espaço para novas alterações
 - nome -> alterações
-- Ex.: Anderson -> melhoramento das built-ins
+- Ex.: Anderson -> eliminação de vazamentos
 
 
 # Minishell_das_Tropas
