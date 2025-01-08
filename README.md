@@ -5,7 +5,8 @@
 - Eliandro -> Terminou o Minishell 😏️
 
 # Minishell terminado
-[Link Aqui 😏️] (https://open.spotify.com/intl-pt/track/5gWwWRLxzkrXSojJ8vcF0b?si=b3964ec890884293)
+[Link Aqui 😏️](https://open.spotify.com/intl-pt/track/5gWwWRLxzkrXSojJ8vcF0b?si=b3964ec890884293)
+
 
 # Minishell_das_Tropas
 
