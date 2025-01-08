@@ -1,7 +1,11 @@
 ## Espaço para novas alterações
 - nome -> alterações
-- Ex.: Anderson -> eliminação de vazamentos
+- Ex.: Xobo -> Baixou 100
+- Anderson -> eliminação de vazamentos
+- Eliandro -> Terminou o Minishell 😏️
 
+# Minishell terminado
+[Link Aqui 😏️] (https://open.spotify.com/intl-pt/track/5gWwWRLxzkrXSojJ8vcF0b?si=b3964ec890884293)
 
 # Minishell_das_Tropas
 
