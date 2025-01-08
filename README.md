@@ -1,6 +1,6 @@
 ## Espaço para novas alterações
 - nome -> alterações
-- Ex.: Xobo -> Baixou 100
+- Ex.: Xobo -> Baixou 100 💵️
 - Anderson -> eliminação de vazamentos
 - Eliandro -> Terminou o Minishell 😏️
 
