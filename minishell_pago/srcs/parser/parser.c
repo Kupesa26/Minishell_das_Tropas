@@ -6,12 +6,9 @@
 /*   By: efaustin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 16:10:29 by efaustin          #+#    #+#             */
-/*   Updated: 2025/01/10 15:13:02 by efaustin         ###   ########.fr       */
+/*   Updated: 2025/01/10 16:02:51 by efaustin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-
-
 
 #include "minishell.h"
 
@@ -28,13 +25,6 @@ void	parser(t_shell **shell)
 			return ;
 	}
 }
-
-/*
-**  creates new command and pushes command name as first arg in command struct
-**	if command is a pipe or semicolon, flags parse error.
-**	if redir, creates new command without name, to be filled in by parse_tokens
-**	(e.g. "< file1 cat")
-*/
 
 int		init_cmd(t_shell **shell, char *cmd_name, int *i)
 {
@@ -56,14 +46,6 @@ int		init_cmd(t_shell **shell, char *cmd_name, int *i)
 	push_cmd_arg(shell, cmd_name, i);
 	return (SUCCESS);
 }
-
-/*
-**  loops through tokens, pushing as files if redir is found, else as args.
-**	evaluates first if "real" token, not '|' nor "|" or meta character
-**	contained in an environment variable
-**	(e.g. "export CMD="cat notes | grep fclean" ").
-**  if separator is found, breaks loop and flags appropriately.
-*/
 
 int		parse_tokens(t_shell **shell, t_cmd **current, int *i)
 {
@@ -94,10 +76,6 @@ int		parse_tokens(t_shell **shell, t_cmd **current, int *i)
 	return (SUCCESS);
 }
 
-/*
-**  checks file_name for errors, then sets in/out information and pushes files
-*/
-
 int		assign_io(t_shell **shell, t_cmd **current,
 					int meta, int *i)
 {
@@ -117,12 +95,6 @@ int		assign_io(t_shell **shell, t_cmd **current,
 	return (SUCCESS);
 }
 
-/*
-**	evaluates if loop was exited due to separator.
-**	if so, sets command->separator accordingly and increments to next token.
-**	flags multiline error if command chain ends in pipe (e.g. "echo hello |").
-*/
-
 int		check_if_separator(t_shell **shell, t_cmd **current, int *i,
 							int meta)
 {
@@ -139,3 +111,4 @@ int		check_if_separator(t_shell **shell, t_cmd **current, int *i,
 	}
 	return (SUCCESS);
 }
+

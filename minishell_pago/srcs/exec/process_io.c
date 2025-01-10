@@ -6,7 +6,7 @@
 /*   By: efaustin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 16:10:29 by efaustin          #+#    #+#             */
-/*   Updated: 2025/01/10 15:13:02 by efaustin         ###   ########.fr       */
+/*   Updated: 2025/01/10 16:02:51 by efaustin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,3 +60,4 @@ int	process_out(t_shell **shell, int *tmp_fd, int *saved_std)
 	dup2_and_close(shell, tmp_fd[OUT], STDOUT_FILENO);
 	return (SUCCESS);
 }
+

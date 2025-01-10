@@ -6,18 +6,11 @@
 /*   By: efaustin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 16:10:29 by efaustin          #+#    #+#             */
-/*   Updated: 2025/01/10 15:13:02 by efaustin         ###   ########.fr       */
+/*   Updated: 2025/01/10 16:02:51 by efaustin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-
-
 #include "minishell.h"
-
-/*
-**  calls dup2 on stdin/out and closes process in/out fd
-*/
 
 void	dup2_and_close(t_shell **shell, int fd, int stdio)
 {
@@ -26,10 +19,6 @@ void	dup2_and_close(t_shell **shell, int fd, int stdio)
 	if (close(fd) == -1)
 		error_handler(shell, NULL, INTERNAL_ERROR, strerror(errno));
 }
-
-/*
-**  opens in/output files, assigns fd, and flags error if any
-*/
 
 int		open_file(t_shell **shell, t_list **current, int *fd, int mode)
 {
@@ -44,3 +33,4 @@ int		open_file(t_shell **shell, t_list **current, int *fd, int mode)
 	}
 	return (SUCCESS);
 }
+

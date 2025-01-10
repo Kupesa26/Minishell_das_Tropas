@@ -6,22 +6,11 @@
 /*   By: efaustin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 16:10:29 by efaustin          #+#    #+#             */
-/*   Updated: 2025/01/10 15:13:02 by efaustin         ###   ########.fr       */
+/*   Updated: 2025/01/10 16:02:51 by efaustin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-
-
 #include "minishell.h"
-
-/*
-**	uses quicksort to sort environment variables.
-**	divides array into 2 parts using 2 iterators, one starting from left and
-**	one starting from right, until they meet in middle.
-**	left and right partition contain correct but unsorted groups of elements,
-**	Recursive calls to quicksort then sort them.
-*/
 
 void	swap(char **array, int i, int j)
 {
@@ -81,3 +70,4 @@ void	sort_env(char **array, int start, int length)
 	quicksort(array, start, length - 1);
 	return ;
 }
+

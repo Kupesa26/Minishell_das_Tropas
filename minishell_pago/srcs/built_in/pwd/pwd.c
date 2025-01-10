@@ -6,18 +6,11 @@
 /*   By: efaustin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 16:10:29 by efaustin          #+#    #+#             */
-/*   Updated: 2025/01/10 15:13:02 by efaustin         ###   ########.fr       */
+/*   Updated: 2025/01/10 16:02:51 by efaustin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-
-
 #include "minishell.h"
-
-/*
-**	Flags error if option is found. Otherwise calls getcwd and outputs path
-*/
 
 void	built_in_pwd(t_shell **shell)
 {
@@ -38,3 +31,4 @@ void	built_in_pwd(t_shell **shell)
 	write(STDOUT_FILENO, (*shell)->saved_pwd, len);
 	write(STDOUT_FILENO, "\n", 1);
 }
+

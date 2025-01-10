@@ -6,21 +6,11 @@
 /*   By: efaustin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 16:10:29 by efaustin          #+#    #+#             */
-/*   Updated: 2025/01/10 15:13:02 by efaustin         ###   ########.fr       */
+/*   Updated: 2025/01/10 16:02:51 by efaustin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-
-
 #include "minishell.h"
-
-/*
-**	Errors if more than one argument.
-**	If first argument is "-", changes to OLDPWD. If more than '-', flags no_opt.
-**	Else if first argument is given, assigns that to dir.
-**	Else assigns HOME path to dir. Executes syscall (chdir). Updates env vars.
-*/
 
 void	built_in_cd(t_shell **shell)
 {
@@ -83,3 +73,4 @@ int		built_in_cd_save_and_chdir(t_shell **shell, char *dir, char *oldpwd)
 	free_paths(&new_path, &new_path_tmp, NULL, dir);
 	return (cd_free_update(shell, dot_sub_path, new_path_len));
 }
+

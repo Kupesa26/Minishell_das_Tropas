@@ -6,22 +6,11 @@
 /*   By: efaustin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 16:10:29 by efaustin          #+#    #+#             */
-/*   Updated: 2025/01/10 15:13:02 by efaustin         ###   ########.fr       */
+/*   Updated: 2025/01/10 16:02:51 by efaustin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-
-
 #include "minishell.h"
-
-/*
-**	If no arguments, displays all env variables in lexicographical order.
-**	Else if arg with no value, makes var if not existant. Otherwise returns.
-**	Else makes var if not existant. Otherwise change existing var value.
-**	Variable naming conventions: [a-zA-Z_]{1,}[a-zA-Z0-9_]{0,}
-**	\ is ignored. " and ' flag multiline error.
-*/
 
 void	built_in_export(t_shell **shell)
 {
@@ -119,3 +108,4 @@ bool	built_in_export_valid_identifier(const char *arg)
 	}
 	return (true);
 }
+

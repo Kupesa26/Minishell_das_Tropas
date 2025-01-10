@@ -6,20 +6,11 @@
 /*   By: efaustin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 16:10:29 by efaustin          #+#    #+#             */
-/*   Updated: 2025/01/10 15:13:02 by efaustin         ###   ########.fr       */
+/*   Updated: 2025/01/10 16:02:51 by efaustin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-
-
 #include "minishell.h"
-
-/*
-**	instead of reallocating entire array, frees one element,
-**	shifts next pointers, and assign all remaining space to NULL.
-**	updates n_env, not envp_cpy_size because we need latter to push variables.
-*/
 
 void	pop_env(t_shell **shell, char *name)
 {
@@ -47,11 +38,6 @@ void	pop_env(t_shell **shell, char *name)
 		env++;
 	}
 }
-
-/*
-**	if new variable fits in array, just assign first NULL pointer to it,
-**	if not reallocate the array.
-*/
 
 int		push_env(t_shell **shell, char *name, int internal)
 {
@@ -123,3 +109,4 @@ void	free_if_failed(t_shell **shell, char *str, char **temp)
 		error_handler(shell, NULL, INTERNAL_ERROR, ERR_INTERNAL);
 	}
 }
+

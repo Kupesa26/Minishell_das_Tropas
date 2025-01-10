@@ -6,22 +6,13 @@
 /*   By: efaustin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 16:10:29 by efaustin          #+#    #+#             */
-/*   Updated: 2025/01/10 15:13:02 by efaustin         ###   ########.fr       */
+/*   Updated: 2025/01/10 16:02:51 by efaustin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-
-
 
 #include "minishell.h"
 
 int g_signal = 0;
-
-/*
-** SIGINT C-C prompt
-** SIGQUIT C-\ ignore in shell loop, "Quit: 3" in exec loop
-** EOF C-D exit (detected in read line)
-*/
 
 void	shell_signals(t_shell **shell)
 {
@@ -62,11 +53,6 @@ void	exec_signal_handler(int signal)
 	}
 }
 
-/*
-**	waits on child processes and checks their exit statuses,
-**	using pids saved in command struct when fork was called
-*/
-
 void	wait_and_signal_check(t_shell **shell, t_cmd *current)
 {
 	int			w_status;
@@ -91,3 +77,4 @@ void	wait_and_signal_check(t_shell **shell, t_cmd *current)
 		current = current->next;
 	}
 }
+

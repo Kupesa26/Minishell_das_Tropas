@@ -6,12 +6,9 @@
 /*   By: efaustin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 16:10:29 by efaustin          #+#    #+#             */
-/*   Updated: 2025/01/10 15:13:02 by efaustin         ###   ########.fr       */
+/*   Updated: 2025/01/10 16:02:51 by efaustin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-
-
 
 #include "minishell.h"
 
@@ -99,3 +96,4 @@ void	set_literal(char *line, unsigned char *parse)
 	if (match_str(line, "\\'", 0))
 		*parse |= LITERAL_QUOTE;
 }
+

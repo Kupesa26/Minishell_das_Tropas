@@ -6,18 +6,11 @@
 /*   By: efaustin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 16:10:29 by efaustin          #+#    #+#             */
-/*   Updated: 2025/01/10 15:13:02 by efaustin         ###   ########.fr       */
+/*   Updated: 2025/01/10 16:02:51 by efaustin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-
-
 #include "minishell.h"
-
-/*
-**  checks if token is true meta char
-*/
 
 bool	is_meta_token(t_shell **shell, int token)
 {
@@ -33,10 +26,6 @@ bool	is_meta_token(t_shell **shell, int token)
 	return (false);
 }
 
-/*
-**  returns meta type
-*/
-
 int		meta_to_code(char *token)
 {
 	if (ft_strcmp(token, ">") == 0)
@@ -51,11 +40,6 @@ int		meta_to_code(char *token)
 		return (PIPE);
 	return (NOT_ASSIGNED);
 }
-
-/*
-**  pushes arg to list, moves current_arg pointer to new last node
-**  increments n_args counter and i
-*/
 
 void	push_cmd_arg(t_shell **shell, char *arg, int *i)
 {
@@ -74,11 +58,6 @@ void	push_cmd_arg(t_shell **shell, char *arg, int *i)
 	(*current)->n_args++;
 	(*i)++;
 }
-
-/*
-**  pushes file and mode to command struct and updates
-**  current file pointer to new last file. increments i after
-*/
 
 void	push_io_file(t_shell **shell, int meta,
 					char *file_name, int *i)
@@ -109,3 +88,4 @@ void	push_io_file(t_shell **shell, int meta,
 	}
 	*i += 2;
 }
+

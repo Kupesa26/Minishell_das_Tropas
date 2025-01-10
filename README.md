@@ -1,5 +1,5 @@
 ## Última alteração
-- Eliandro -> Terminou o Minishell 😏️ (agora é a sério) (tá na pasta minishell_pago)
+- Eliandro -> Terminou o Minishell 😏️ (agora é a sério) (tá na pasta minishell_pago) (só falta os vazamentos 😏️ e a norma)
 
 ## Minishell terminado
 [Link Aqui 😏️](https://open.spotify.com/intl-pt/track/5gWwWRLxzkrXSojJ8vcF0b?si=b3964ec890884293)

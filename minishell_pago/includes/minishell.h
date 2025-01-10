@@ -6,10 +6,9 @@
 /*   By: efaustin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 16:10:29 by efaustin          #+#    #+#             */
-/*   Updated: 2025/01/10 15:13:02 by efaustin         ###   ########.fr       */
+/*   Updated: 2025/01/10 16:02:51 by efaustin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #ifndef MINISHELL_H
 # define MINISHELL_H
@@ -37,7 +36,6 @@
 # define ERR_MULTI_LINE "multiline commands not supported"
 # define ERR_AMBIGUOUS_REDIRECT "ambiguous redirect"
 # define ENV_OPT "*@#-$!0_"
-
 
 enum	e_process_info
 {
@@ -227,26 +225,14 @@ void				cmd_name_update_args(t_shell **shell, t_list *next);
 void				cmd_name_update(t_shell **shell,
 						char **interpreted_result);
 
-/*
-**	srcs/exec/var_file_exp.c
-*/
-
 int					cmd_io_files_var_expansion(t_shell **shell, t_list *file);
 int					cmd_io_files_expand_tokens(t_shell **shell, t_list *file);
-
-/*
-**	srcs/exec/variable_expansion.c
-*/
 
 int					variable_expansion(t_shell **shell);
 int					bad_redirect(t_shell **shell, char **expand,
 						char ***lit_tokens, char ***int_result);
 int					free_tmp_tokens(char **expand, char ***literal_result,
 						char ***interpreted_result);
-
-/*
-**	srcs/exec/var_name_exp.c
-*/
 
 void				cmd_name_var_expansion(t_shell **shell);
 void				cmd_name_expand_tokens(t_shell **shell, char ***lit_result,
@@ -257,16 +243,8 @@ void				cmd_name_update_args(t_shell **shell, t_list *next);
 void				cmd_name_update(t_shell **shell,
 						char **interpreted_result);
 
-/*
-**	srcs/exec/var_file_exp.c
-*/
-
 int					cmd_io_files_var_expansion(t_shell **shell, t_list *file);
 int					cmd_io_files_expand_tokens(t_shell **shell, t_list *file);
-
-/*
-**	srcs/exec/variable_expansion.c
-*/
 
 int					variable_expansion(t_shell **shell);
 int					bad_redirect(t_shell **shell, char **expand,
@@ -274,15 +252,7 @@ int					bad_redirect(t_shell **shell, char **expand,
 int					free_tmp_tokens(char **expand, char ***literal_result,
 						char ***interpreted_result);
 
-/*
-**	srcs/lexer/lexer.c
-*/
-
 void				lexer(t_shell **shell, char **input);
-
-/*
-**	srcs/lexer/handle_env/env_checks.c
-*/
 
 char				*fetch_env(char *line, t_shell **shell, char *free_env);
 char				*check_env_literal(t_shell **shell, char *line, int *len,
@@ -292,10 +262,6 @@ char				*check_env_str(char *line, int len, char **envp,
 void				check_return_value(char **env_str, char *free_env,
 						int return_value);
 
-/*
-**	srcs/lexer/handle_env/env_flags.c
-*/
-
 void				set_env_sub_error(t_shell **shell,
 						char **new_literal_token, int *i,
 						unsigned char bracket_sub);
@@ -304,18 +270,10 @@ unsigned char		flag_offset(unsigned char *parse, char **new_literal_token,
 void				handle_bslash_input(t_shell **shell,
 						char **new_literal_token, int i, unsigned char *parse);
 
-/*
-**	srcs/lexer/handle_env/env_home.c
-*/
-
 bool				integrate_home(char **input, int *i, t_shell **shell,
 						unsigned char *parse);
 void				handle_tilde(char **input, int *i, t_shell **shell,
 						unsigned char *parse);
-
-/*
-**	srcs/lexer/handle_env/env_offset.c
-*/
 
 unsigned char		get_offset_brackets(t_shell **shell, int *i, int index);
 bool				get_offset_no_opt(t_shell **shell,
@@ -325,20 +283,12 @@ void				get_offset_ignore_env(t_shell **shell,
 unsigned char		get_offset(t_shell **shell, char **new_literal_token,
 						int index, int *i);
 
-/*
-**	srcs/lexer/handle_env/env_offset2.c
-*/
-
 int					get_offset_is_option(char **lit_token, int *i, int index);
 void				get_offset_skip_option(t_shell **shell, char **lit_token,
 						int index, int *i);
 void				get_offset_stop_parsing(t_shell **shell, char **lit_token,
 						int index, int *i);
 unsigned char		get_offset_end(t_shell **shell);
-
-/*
-**	srcs/lexer/handle_env/env_strcat.c
-*/
 
 char				*create_lh_string(t_shell **shell, char **input,
 						unsigned char *parse, int *home_len);
@@ -349,10 +299,6 @@ char				*create_temp_line(char *literal_token, int *i, int index,
 void				update_input(char **input, char **lh_string,
 						char **rh_string, int size);
 
-/*
-**	srcs/lexer/handle_env/handle_env.c
-*/
-
 bool				escape_characters(t_shell **shell, char **env_str,
 						unsigned char *parse);
 void				handle_env_lexer_level(t_shell **shell, char **input,
@@ -362,20 +308,12 @@ void				handle_env_exec_level(t_shell **shell, char **input,
 int					handle_env(t_shell **shell, char **input, int *i,
 						unsigned char *parse);
 
-/*
-**	srcs/lexer/input/escape_characters.c
-*/
-
 void				count_esc_char(char **env_str, int *to_escape,
 						int *len, unsigned char *parse);
 void				expand_esc_char(char **env_str, char **new_env_str,
 						int *new_len, unsigned char *parse);
 bool				escape_characters(t_shell **shell, char **env_str,
 						unsigned char *parse);
-
-/*
-**	srcs/lexer/input/input_to_literal_input.c
-*/
 
 void				integrate_env(char **input, int *i, t_shell **shell);
 void				reset_literals(char **input, int i, unsigned char *parse);
@@ -384,21 +322,12 @@ int					parse_literal_input(t_shell **shell, char **input,
 void				input_to_literal_input(t_shell **shell, char **input,
 						int lexer);
 
-
-/*
-**	srcs/lexer/input/trim_input.c
-*/
-
 void				trim_words_update_parse_len(unsigned char *parse, int *len,
 						char *line);
 bool				trim_words_is_meta(char c, unsigned char parse);
 int					trim_words(char *line);
 void				trim_quotes(char *line, int *i, unsigned char parse);
 void				trim_brackets(char *line, int *i);
-
-/*
-**	srcs/lexer/tokens/interpreted_tokens_flags.c
-*/
 
 void				set_literal_interpreted(char *line, unsigned char *parse);
 void				reset_parse_bslash(char **new_literal_token, int i,
@@ -410,20 +339,12 @@ int					handle_quotes(char **new_literal_token, int i,
 void				handle_bslash(t_shell **shell, char **new_literal_token,
 						int i, unsigned char *parse);
 
-/*
-**	srcs/lexer/tokens/literal_input_to_literal_tokens.c
-*/
-
 int					parse_meta_token(char *line, int i);
 void				set_literal(char *line, unsigned char *parse);
 char				**create_literal_tokens(char **input, t_shell **shell);
 void				fill_tokens(char **literal_tokens, char *line,
 						t_shell **shell);
 char				*new_literal_token(t_shell **shell, int len, char *token);
-
-/*
-**	srcs/lexer/tokens/literal_tokens_flags.c
-*/
 
 void				flag_literal_bslash(unsigned char *parse,
 						unsigned char *delete);
@@ -433,10 +354,6 @@ void				flag_bslash_term(t_shell **shell, unsigned char *delete);
 void				flag_literal_quote(unsigned char *parse,
 						unsigned char *delete, char to_escape);
 void				flag_quotes(int n_quotes, t_shell **shell);
-
-/*
-**	srcs/lexer/tokens/literal_tokens_to_interpreted_tokens.c
-*/
 
 char				**create_interpreted_tokens(char **literal_tokens,
 						int tokens, t_shell **shell, int lexer);
@@ -448,10 +365,6 @@ void				literal_to_interpreted(char **new_literal_token,
 						t_shell **shell, int lexer);
 int					calculate_new_size(char *line, int prev_size);
 
-/*
-**	parser/parser.c
-*/
-
 void				parser(t_shell **shell);
 int					init_cmd(t_shell **shell, char *cmd_name, int *i);
 int					parse_tokens(t_shell **shell, t_cmd **current, int *i);
@@ -460,16 +373,8 @@ int					assign_io(t_shell **shell, t_cmd **current, int meta,
 int					check_if_separator(t_shell **shell, t_cmd **current,
 						int *i, int meta);
 
-/*
-**	srcs/utils/array_utils.c
-*/
-
 char				**copy_array(t_shell **shell, char **src, int size);
 void				free_array(char **array);
-
-/*
-**	srcs/utils/cd_dir_utils.c
-*/
 
 int					get_fetch_dir(t_shell **shell, t_list *arg,
 						char **fetch_dir, bool *previous);
@@ -480,18 +385,10 @@ char				*fetch_pwd(t_shell **shell);
 char				*built_in_cd_get_dir(t_shell **shell, t_list *arg,
 						bool *previous);
 
-/*
-**	srcs/utils/cd_env_utils.c
-*/
-
 int					built_in_cd_home(t_shell **shell, char *dir);
 int					built_in_cd_previous(t_shell **shell, char *dir);
 void				update_pwd(t_shell **shell, char *new_path,
 						size_t new_path_len);
-
-/*
-**	srcs/utils/cd_path_utils.c
-*/
 
 void				delete_current_path(char *new_path, size_t new_path_len,
 						size_t current_path, size_t i);
@@ -501,10 +398,6 @@ void				shift_path_dot(char *new_path, size_t new_path_len,
 						size_t index);
 void				join_path(char *new_path, size_t new_path_len);
 void				slash_sub(char *new_path, size_t new_path_len);
-
-/*
-**	srcs/utils/cd_path_utils2.c
-*/
 
 void				cd_update_current_path(char *new_path,
 						size_t *current_path);
@@ -516,54 +409,30 @@ void				remove_dot_component(char *new_path, size_t new_path_len);
 void				remove_dot_dot_component(char *new_path,
 						size_t new_path_len);
 
-/*
-**	srcs/utils/cd_path_utils3.c
-*/
-
 char				*create_new_path(t_shell **shell, char *dir);
 char				*concat_new_path(t_shell **shell, char *pwd, char *dir,
 						size_t dir_len);
 char				*dot_sub(char *new_path, size_t new_path_len);
 char				*create_sub_path(char *new_path, size_t len);
 
-/*
-**	srcs/utils/cd_utils.c
-*/
-
 int					valid_sub(char *current_path);
 size_t				get_new_len(char *new_path, size_t new_path_len);
 int					is_relative_dot(char *dir);
 int					is_dot_dir(char *dir);
-
-/*
-**	srcs/utils/cd_utils2.c
-*/
 
 int					free_paths(char **new_path, char **new_path_tmp,
 						char **dot_sub_path, char *dir);
 char				*create_tmp_path(t_shell **shell, char **new_path,
 						size_t new_path_len, char *dir);
 
-/*
-**	srcs/utils/command_utils.c
-*/
-
 t_cmd				*new_command(t_shell **shell, char *name);
 void				push_command(t_shell **shell, char *cmd_name, int token);
 void				free_commands(t_shell **shell);
-
-/*
-**	srcs/utils/env_utils.c
-*/
 
 int					n_env(char **envp);
 int					match_env(char *current, char *to_find);
 int					change_env(t_shell **shell, char **envp, char *name,
 						int internal);
-
-/*
-**	srcs/utils/error_utils.c
-*/
 
 void				lexer_error_handler(t_shell **shell, char *args,
 						int error_code, char *error_message);
@@ -572,43 +441,19 @@ void				error_handler(t_shell **shell, char *args, int error_code,
 void				error_printer(char *command, char *args,
 						char *error_message);
 
-/*
-**	srcs/utils/exec_utils.c
-*/
-
 void				dup2_and_close(t_shell **shell, int fd, int stdio);
 int					open_file(t_shell **shell, t_list **current, int *fd,
 						int mode);
 
-/*
-**	srcs/utils/export_utils.c
-*/
-
 int					built_in_export_escape_char(char *envp);
 void				built_in_export_display_env(char *envp);
 
-/*
-**	srcs/utils/ft_atoi.c
-*/
-
 int					ft_atoi(const char *str);
-
-/*
-**	srcs/utils/ft_itoa_base.c
-*/
 
 char				*ft_itoa_base(int value, int base);
 
-/*
-**	srcs/utils/input_to_literal_tokens_utils.c
-*/
-
 int					n_tokens(char *line);
 bool				is_escaped_meta_token(char *token);
-
-/*
-**	srcs/utils/list_utils.c
-*/
 
 t_list				*new_node(t_shell **shell, char *name, int value);
 t_list				**last_node(t_list **list);
@@ -616,18 +461,10 @@ void				push_to_list(t_list **location, t_list *new);
 void				free_list(t_list *list);
 void				free_all_lists(t_cmd **command);
 
-/*
-**	srcs/utils/list_utils2.c
-*/
-
 void				update_current(t_list ***current, t_list **node);
 void				update_node(t_shell **shell, t_list **node, char *token);
 void				update_list(t_shell **shell, t_list **list, char *token,
 						t_list ***current);
-
-/*
-**	srcs/utils/literal_tokens_to_interpreted_tokens_utils.c
-*/
 
 bool				detect_ignored_env(t_shell **shell,
 						char **new_literal_token, int i, unsigned char parse);
@@ -639,28 +476,16 @@ unsigned char		bslash_term(t_shell **shell, char **literal_tokens,
 void				ignore_env_substitution(t_shell **shell, char **lit_tokens,
 						char **int_tokens, int n);
 
-/*
-**	srcs/utils/parse_utils.c
-*/
-
 bool				is_meta_token(t_shell **shell, int token);
 int					meta_to_code(char *token);
 void				push_cmd_arg(t_shell **shell, char *arg, int *i);
 void				push_io_file(t_shell **shell, int meta, char *file_name,
 						int *i);
 
-/*
-**	srcs/utils/push_pop_env.c
-*/
-
 void				pop_env(t_shell **shell, char *name);
 int					push_env(t_shell **shell, char *name, int internal);
 int					realloc_env(t_shell **shell, char *name, int internal);
 void				free_if_failed(t_shell **shell, char *str, char **temp);
-
-/*
-**	srcs/utils/path_utils.c
-*/
 
 bool				is_path(char *cmd_name);
 char				*check_exec_copy_path(t_shell **shell);
@@ -671,10 +496,6 @@ char				*check_exec_get_exec_name(t_shell **shell,
 char				update_current_path(t_shell **shell, char **full_path,
 						char **exec_name, int *i);
 
-/*
-**	srcs/utils/shell_utils.c
-*/
-
 void				assign_pwd(t_shell **shell);
 t_shell				*new_shell(char **envp);
 void				assign_home_parent_shell(t_shell **new,
@@ -682,25 +503,13 @@ void				assign_home_parent_shell(t_shell **new,
 void				assign_built_in(t_shell **shell);
 void				reset_shell(t_shell **shell);
 
-/*
-**	srcs/utils/signal_utils.c
-*/
-
 void				shell_signals(t_shell **shell);
 void				shell_signal_handler(int signal);
 void				exec_signals(t_shell **shell);
 void				exec_signal_handler(int signal);
 void				wait_and_signal_check(t_shell **shell, t_cmd *current);
 
-/*
-**	srcs/utils/sort.c
-*/
-
 void				sort_env(char **array, int start, int length);
-
-/*
-**	srcs/utils/utils1.c
-*/
 
 void				ft_bzero(void *s, size_t n);
 int					ft_isalnum(int c);
@@ -709,19 +518,11 @@ void				indexing(char **line, char **valid_escape_char,
 						int *index);
 void				iter_whitespaces(char **line, int *index);
 
-/*
-**	rcs/utils/utils2.c
-*/
-
 void				ft_putstr_fd(char *s, int fd);
 char				*ft_strchr(const char *s, int c);
 int					ft_strcmp(void *s1, void *s2);
 int					match_str(char *s1, char *s2, char full);
 size_t				str_len(char *str, char *stop, char add);
-
-/*
-**	srcs/utils/var_arg_utils.c
-*/
 
 void				cmd_args_loop_expand(t_shell **shell, t_list **tmp);
 void				cmd_args_update_current_arg_int(t_shell **shell,
@@ -733,10 +534,6 @@ void				cmd_args_sync_name(t_shell **shell, t_list ***tmp,
 void				cmd_args_push_update(t_list **list, t_list **end,
 						t_list ***tmp);
 
-/*
-**	srcs/utils/var_name_utils.c
-*/
-
 void				cmd_name_update_name(t_shell **shell,
 						char **interpreted_result);
 void				cmd_name_push_arg_list(t_shell **shell,
@@ -744,3 +541,4 @@ void				cmd_name_push_arg_list(t_shell **shell,
 char				*cmd_name_cpy_name(t_shell **shell);
 
 #endif
+
