@@ -3,7 +3,7 @@
 
 ## Minishell terminado
 - Na pasta **minishell_pago**
-
+ou
 - [Link Aqui 😏️](https://open.spotify.com/intl-pt/track/5gWwWRLxzkrXSojJ8vcF0b?si=b3964ec890884293)
 
 
