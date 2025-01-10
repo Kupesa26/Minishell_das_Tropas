@@ -109,4 +109,3 @@ char	*built_in_cd_get_dir(t_shell **shell, t_list *arg, bool *previous)
 	}
 	return (dir_cpy);
 }
-

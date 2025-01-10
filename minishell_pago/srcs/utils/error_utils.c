@@ -60,4 +60,3 @@ void	error_printer(char *command, char *args, char *error_message)
 		write(STDERR_FILENO, "\n", 1);
 	}
 }
-

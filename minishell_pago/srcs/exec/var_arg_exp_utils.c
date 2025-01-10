@@ -39,4 +39,3 @@ char	*ft_join(char *s1, char *s2, size_t len)
 	result[i] = '\0';
 	return (result);
 }
-

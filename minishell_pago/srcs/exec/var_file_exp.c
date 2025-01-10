@@ -48,4 +48,3 @@ int		cmd_io_files_expand_tokens(t_shell **shell, t_list *file)
 	free_tmp_tokens(&expand, &lit_tokens, &int_tokens);
 	return (SUCCESS);
 }
-

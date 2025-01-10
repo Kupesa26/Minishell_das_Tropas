@@ -103,4 +103,3 @@ void	cmd_name_update(t_shell **shell, char **interpreted_result)
 	cmd_name_update_name(shell, interpreted_result);
 	cmd_name_push_arg_list(shell, interpreted_result);
 }
-

@@ -61,4 +61,3 @@ char	*ft_itoa_base(int value, int base)
 		result[0] = b[value % base];
 	return (result);
 }
-

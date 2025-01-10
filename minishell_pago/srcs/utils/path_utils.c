@@ -84,4 +84,3 @@ char	update_current_path(t_shell **shell, char **full_path,
 	}
 	return (next_path);
 }
-

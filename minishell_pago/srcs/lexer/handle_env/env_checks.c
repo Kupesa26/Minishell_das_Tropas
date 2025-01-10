@@ -97,4 +97,3 @@ void			check_return_value(char **env_str, char *free_env,
 		*env_str = ft_itoa_base(return_value, 10);
 	}
 }
-

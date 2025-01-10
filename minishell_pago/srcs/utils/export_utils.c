@@ -41,4 +41,3 @@ void	built_in_export_display_env(char *envp)
 	while (envp[i])
 		i += built_in_export_escape_char(envp + i);
 }
-

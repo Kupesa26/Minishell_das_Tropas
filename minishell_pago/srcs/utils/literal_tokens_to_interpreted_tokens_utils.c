@@ -73,4 +73,3 @@ void			ignore_env_substitution(t_shell **shell, char **lit_tokens,
 	int_tokens[n] = ft_join(lit_tokens[n], NULL,
 			str_len(lit_tokens[n], NULL, 0));
 }
-

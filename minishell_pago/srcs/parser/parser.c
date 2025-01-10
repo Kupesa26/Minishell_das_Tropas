@@ -111,4 +111,3 @@ int		check_if_separator(t_shell **shell, t_cmd **current, int *i,
 	}
 	return (SUCCESS);
 }
-

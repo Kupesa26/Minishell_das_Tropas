@@ -47,4 +47,3 @@ unsigned char	get_offset_end(t_shell **shell)
 		lexer_error_handler(shell, NULL, NO_MULTI_LINE, ERR_MULTI_LINE);
 	return (SUCCESS);
 }
-

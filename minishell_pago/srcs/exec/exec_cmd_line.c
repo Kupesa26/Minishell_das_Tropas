@@ -77,4 +77,3 @@ void	reset_std(t_shell **shell, int *saved_std)
 	if (close(saved_std[OUT]) == -1)
 		error_handler(shell, NULL, INTERNAL_ERROR, strerror(errno));
 }
-

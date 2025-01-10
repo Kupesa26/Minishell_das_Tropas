@@ -74,4 +74,3 @@ void			expand_esc_char(char **env_str, char **new_env_str,
 		(*new_len)++;
 	}
 }
-

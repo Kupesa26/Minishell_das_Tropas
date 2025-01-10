@@ -85,4 +85,3 @@ void			update_input(char **input, char **lh_string, char **rh_string,
 	free(*lh_string);
 	free(*rh_string);
 }
-

@@ -42,4 +42,3 @@ void			handle_env_exec_level(t_shell **shell, char **input, int *i,
 	if ((*shell)->current_status == IGN_ENV_SUB)
 		(*shell)->current_status = SUCCESS;
 }
-

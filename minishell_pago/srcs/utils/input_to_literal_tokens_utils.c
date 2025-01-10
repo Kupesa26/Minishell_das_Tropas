@@ -39,4 +39,3 @@ bool	is_escaped_meta_token(char *token)
 			match_str("\\;", token, 1) ||
 			match_str("\\|", token, 1));
 }
-

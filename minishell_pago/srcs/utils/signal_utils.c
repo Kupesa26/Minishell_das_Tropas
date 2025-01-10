@@ -77,4 +77,3 @@ void	wait_and_signal_check(t_shell **shell, t_cmd *current)
 		current = current->next;
 	}
 }
-

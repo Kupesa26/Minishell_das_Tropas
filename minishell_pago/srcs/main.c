@@ -24,4 +24,3 @@ int	main(int ac, char **av, char **envp)
 	(void)av;
 	return (0);
 }
-

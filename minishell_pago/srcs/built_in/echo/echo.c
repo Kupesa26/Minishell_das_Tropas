@@ -46,4 +46,3 @@ char	built_in_echo_has_opt(char *line)
 		return (false);
 	return (true);
 }
-

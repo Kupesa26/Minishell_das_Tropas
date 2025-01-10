@@ -28,4 +28,3 @@ void	built_in_unset(t_shell **shell)
 		arg = arg->next;
 	}
 }
-

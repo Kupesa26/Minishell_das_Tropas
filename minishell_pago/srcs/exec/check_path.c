@@ -63,4 +63,3 @@ void	check_exec_absolute_path(t_shell **shell)
 		(*((*shell)->current_command))->exec |= PROCESS_NOT_EXEC;
 	}
 }
-

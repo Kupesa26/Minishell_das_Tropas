@@ -55,4 +55,3 @@ int		change_env(t_shell **shell, char **envp, char *name, int internal)
 	}
 	return (SUCCESS);
 }
-

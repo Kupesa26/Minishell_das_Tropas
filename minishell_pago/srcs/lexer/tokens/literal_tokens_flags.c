@@ -55,4 +55,3 @@ void			flag_quotes(int n_quotes, t_shell **shell)
 		error_handler(shell, NULL, NO_MULTI_LINE, ERR_MULTI_LINE);
 	}
 }
-

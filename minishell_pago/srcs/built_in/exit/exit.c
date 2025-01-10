@@ -110,4 +110,3 @@ bool	built_in_exit_within_range(t_shell **shell, char *exit_arg,
 		error_handler(shell, exit_arg, 255, "out of range");
 	return (true);
 }
-

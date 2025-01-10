@@ -39,4 +39,3 @@ void	built_in_env(t_shell **shell)
 		env++;
 	}
 }
-

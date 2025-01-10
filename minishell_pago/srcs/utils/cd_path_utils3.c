@@ -112,4 +112,3 @@ char	*create_sub_path(char *new_path, size_t len)
 	}
 	return (sub_path);
 }
-

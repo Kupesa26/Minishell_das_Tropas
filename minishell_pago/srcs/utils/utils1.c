@@ -70,4 +70,3 @@ void	iter_whitespaces(char **line, int *index)
 			(**line == ' ' || **line == '\t'))
 		(*line)++;
 }
-

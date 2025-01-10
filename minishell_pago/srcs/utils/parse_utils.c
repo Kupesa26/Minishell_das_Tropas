@@ -88,4 +88,3 @@ void	push_io_file(t_shell **shell, int meta,
 	}
 	*i += 2;
 }
-

@@ -51,4 +51,3 @@ char	*create_tmp_path(t_shell **shell, char **new_path, size_t new_path_len,
 	}
 	return (tmp_path);
 }
-

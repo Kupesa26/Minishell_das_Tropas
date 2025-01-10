@@ -109,4 +109,3 @@ void	free_if_failed(t_shell **shell, char *str, char **temp)
 		error_handler(shell, NULL, INTERNAL_ERROR, ERR_INTERNAL);
 	}
 }
-

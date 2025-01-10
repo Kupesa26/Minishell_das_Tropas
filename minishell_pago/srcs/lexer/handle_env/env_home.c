@@ -70,4 +70,3 @@ bool			integrate_home(char **input, int *i, t_shell **shell,
 		error_handler(shell, NULL, INTERNAL_ERROR, ERR_INTERNAL);
 	return (true);
 }
-

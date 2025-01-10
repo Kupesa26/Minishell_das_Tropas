@@ -61,4 +61,3 @@ char	*cmd_name_cpy_name(t_shell **shell)
 	}
 	return (cpy);
 }
-

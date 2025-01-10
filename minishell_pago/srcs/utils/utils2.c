@@ -77,4 +77,3 @@ size_t	str_len(char *str, char *stop, char add)
 	}
 	return (len);
 }
-

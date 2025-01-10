@@ -108,4 +108,3 @@ void	remove_dot_dot_component(char *new_path, size_t new_path_len)
 		i++;
 	}
 }
-

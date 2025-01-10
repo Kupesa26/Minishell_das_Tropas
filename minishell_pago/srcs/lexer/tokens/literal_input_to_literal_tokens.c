@@ -96,4 +96,3 @@ void	set_literal(char *line, unsigned char *parse)
 	if (match_str(line, "\\'", 0))
 		*parse |= LITERAL_QUOTE;
 }
-

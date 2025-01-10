@@ -85,4 +85,3 @@ void	slash_sub(char *new_path, size_t new_path_len)
 		index++;
 	}
 }
-

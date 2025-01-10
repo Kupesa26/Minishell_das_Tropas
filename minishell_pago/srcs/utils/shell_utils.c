@@ -121,4 +121,3 @@ void	reset_shell(t_shell **shell)
 	*((*shell)->current_command) = NULL;
 	(*shell)->current_command = &((*shell)->commands);
 }
-

@@ -140,4 +140,3 @@ int				calculate_new_size(char *line, int prev_size)
 	}
 	return (new_size);
 }
-

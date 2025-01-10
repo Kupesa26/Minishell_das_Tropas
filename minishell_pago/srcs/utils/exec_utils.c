@@ -33,4 +33,3 @@ int		open_file(t_shell **shell, t_list **current, int *fd, int mode)
 	}
 	return (SUCCESS);
 }
-

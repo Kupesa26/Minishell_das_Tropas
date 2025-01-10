@@ -81,4 +81,3 @@ void	free_commands(t_shell **shell)
 		(*shell)->commands = next_command;
 	}
 }
-

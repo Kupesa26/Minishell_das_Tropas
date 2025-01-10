@@ -62,4 +62,3 @@ int		is_dot_dir(char *dir)
 			|| match_str(dir, ".", 1)
 			|| match_str(dir, "..", 1));
 }
-

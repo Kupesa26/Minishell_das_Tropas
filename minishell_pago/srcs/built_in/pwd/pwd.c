@@ -31,4 +31,3 @@ void	built_in_pwd(t_shell **shell)
 	write(STDOUT_FILENO, (*shell)->saved_pwd, len);
 	write(STDOUT_FILENO, "\n", 1);
 }
-

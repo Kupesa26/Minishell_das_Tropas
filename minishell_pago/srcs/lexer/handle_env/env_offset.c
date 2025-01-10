@@ -75,4 +75,3 @@ void			get_offset_ignore_env(t_shell **shell, char **new_literal_token,
 		(*shell)->current_status = IGN_ENV_SUB;
 	}
 }
-

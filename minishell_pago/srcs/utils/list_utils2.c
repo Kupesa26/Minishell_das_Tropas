@@ -34,4 +34,3 @@ void	update_list(t_shell **shell, t_list **list, char *token,
 	(*list)->token_type = EXPANDED_TOKEN;
 	*current = list;
 }
-

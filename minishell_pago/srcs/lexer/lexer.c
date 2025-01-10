@@ -33,4 +33,3 @@ void	lexer(t_shell **shell, char **input)
 	if (*input)
 		free(*input);
 }
-

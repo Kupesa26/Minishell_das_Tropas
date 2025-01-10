@@ -71,4 +71,3 @@ void	cmd_args_push_update(t_list **list, t_list **end,
 	else
 		*tmp = &((*(*tmp))->next);
 }
-

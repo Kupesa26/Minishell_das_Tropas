@@ -87,4 +87,3 @@ void			handle_bslash_input(t_shell **shell,
 			*parse |= LITERAL_QUOTE;
 	}
 }
-

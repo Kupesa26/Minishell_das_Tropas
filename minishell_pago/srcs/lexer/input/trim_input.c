@@ -102,4 +102,3 @@ void	trim_words_update_parse_len(unsigned char *parse, int *len, char *line)
 	else
 		(*len)++;
 }
-

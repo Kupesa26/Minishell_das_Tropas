@@ -80,4 +80,3 @@ void	update_pwd(t_shell **shell, char *new_path, size_t new_path_len)
 		error_handler(shell, NULL, INTERNAL_ERROR, ERR_INTERNAL);
 	free(new_pwd);
 }
-

@@ -63,4 +63,3 @@ void	update_status(t_shell **shell)
 	else
 		(*shell)->status = (*shell)->current_status;
 }
-

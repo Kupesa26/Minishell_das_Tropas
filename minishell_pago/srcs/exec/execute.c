@@ -108,4 +108,3 @@ void	init_exec_args(t_shell **shell)
 	}
 	(*((*shell)->current_command))->exec_args[n_args] = NULL;
 }
-

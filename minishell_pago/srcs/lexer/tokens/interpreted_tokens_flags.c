@@ -86,4 +86,3 @@ void			handle_bslash(t_shell **shell, char **new_literal_token, int i,
 	if (delete)
 		(*new_literal_token)[i] = '\0';
 }
-

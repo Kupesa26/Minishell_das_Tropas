@@ -60,4 +60,3 @@ int	process_out(t_shell **shell, int *tmp_fd, int *saved_std)
 	dup2_and_close(shell, tmp_fd[OUT], STDOUT_FILENO);
 	return (SUCCESS);
 }
-

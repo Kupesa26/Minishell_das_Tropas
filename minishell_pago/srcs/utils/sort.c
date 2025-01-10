@@ -70,4 +70,3 @@ void	sort_env(char **array, int start, int length)
 	quicksort(array, start, length - 1);
 	return ;
 }
-

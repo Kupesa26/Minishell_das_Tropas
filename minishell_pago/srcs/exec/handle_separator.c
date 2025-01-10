@@ -50,4 +50,3 @@ int		handle_semicolon(t_shell **shell, t_cmd **current,
 	}
 	return (SUCCESS);
 }
-

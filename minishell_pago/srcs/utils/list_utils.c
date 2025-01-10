@@ -83,4 +83,3 @@ void	free_all_lists(t_cmd **command)
 	free_list((*command)->in_files);
 	free_list((*command)->out_files);
 }
-

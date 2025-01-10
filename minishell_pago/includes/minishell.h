@@ -541,4 +541,3 @@ void				cmd_name_push_arg_list(t_shell **shell,
 char				*cmd_name_cpy_name(t_shell **shell);
 
 #endif
-

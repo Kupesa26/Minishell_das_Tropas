@@ -94,4 +94,3 @@ void			reset_literals(char **input, int i, unsigned char *parse)
 	if (i > 0 && (*input)[i] && (*input)[i] == '$' && (*parse & LITERAL_ENV))
 		*parse ^= LITERAL_ENV;
 }
-

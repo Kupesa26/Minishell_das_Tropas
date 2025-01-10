@@ -108,4 +108,3 @@ bool	built_in_export_valid_identifier(const char *arg)
 	}
 	return (true);
 }
-
