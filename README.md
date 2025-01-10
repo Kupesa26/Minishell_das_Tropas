@@ -1,10 +1,7 @@
-## Espaço para novas alterações
-- nome -> alterações
-- Ex.: Xobo -> Baixou 100 💵️
-- Anderson -> eliminação de vazamentos
-- Eliandro -> Terminou o Minishell 😏️
+## Última alteração
+- Eliandro -> Terminou o Minishell 😏️ (agora é a sério) (tá na pasta minishell_pago)
 
-# Minishell terminado
+## Minishell terminado
 [Link Aqui 😏️](https://open.spotify.com/intl-pt/track/5gWwWRLxzkrXSojJ8vcF0b?si=b3964ec890884293)
 
 
