@@ -1,6 +1,0 @@
-para usar o tester:
-	cd minishell_tester
-	./tester
-
-OBS.: ignora as falhas dos testes onde o mini retornar uma resposta em inglês e o bash uma em português, esta tudo OK a única diferenca é o idioma (lógicamente não vamos programar um pacote de idiomas para o idioma do user, nhé!)
-
