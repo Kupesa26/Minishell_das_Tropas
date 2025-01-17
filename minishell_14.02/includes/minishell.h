@@ -49,20 +49,20 @@ enum	e_process_info
 enum	e_parse
 {
 	LITERAL_TOKEN = 0,
-	LAST_STATUS = 1,
-	LITERAL_PIPE = 1,
 	INTERPRETED_TOKEN = 1,
-	META = 2,
+	LITERAL_PIPE = 1,
+	LAST_STATUS = 1,
 	BRACKET_SUB = 2,
-	LITERAL_REDIR = 2,
 	LITERAL_BACKSLASH = 2,
+	LITERAL_REDIR = 2,
+	META = 2,
 	CMD = 4,
+	LITERAL_SEMICOLON = 4,
 	LITERAL_QUOTE = 4,
 	EXPANDED_TOKEN = 4,
-	LITERAL_SEMICOLON = 4,
-	ARG = 8,
-	LITERAL_ENV = 8,
 	LITERAL_WHITESPACE = 8,
+	LITERAL_ENV = 8,
+	ARG = 8,
 	QUOTED_SINGLE = 16,
 	QUOTED_DOUBLE = 32,
 	QUOTED = 64,
@@ -118,25 +118,25 @@ typedef	struct		s_cmd
 	char			*name;
 	char			token_type;
 	t_list			*args;
-	t_list			*in_files;
-	t_list			*out_files;
 	t_list			**current_arg;
+	t_list			*in_files;
 	t_list			**current_in_file;
+	t_list			*out_files;
 	t_list			**current_out_file;
+	char			**exec_args;
 	int				n_args;
 	int				in;
 	int				out;
 	int				separator;
 	char			exec;
-	char			**exec_args;
 	pid_t			pid;
 	struct s_cmd	*next;
 }					t_cmd;
 
 typedef	struct		s_shell
 {
-	char			**tokens;
 	char			**envp_cpy;
+	char			**tokens;
 	char			*tokens_info;
 	unsigned char	parse;
 	unsigned char	parse_env;

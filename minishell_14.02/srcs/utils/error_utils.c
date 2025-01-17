@@ -26,7 +26,7 @@ void	error_handler(t_shell **shell, char *args, int error_code,
 	char	*command;
 
 	command = NULL;
-	if (shell)
+	if (shell && *shell)
 		(*shell)->current_status = error_code;
 	if (error_code == INTERNAL_ERROR)
 	{

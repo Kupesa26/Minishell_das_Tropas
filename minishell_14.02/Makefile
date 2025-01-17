@@ -99,3 +99,9 @@ fclean: clean
 	$(RM) $(NAME)
 
 re: fclean all
+
+elian:
+	$(MAKE) re
+	$(MAKE) clean
+
+.PHONY: all clean fclean re elian

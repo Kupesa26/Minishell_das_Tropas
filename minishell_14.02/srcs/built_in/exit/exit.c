@@ -14,6 +14,8 @@
 
 void	free_shell_component(t_shell **shell)
 {
+	if (!shell || !*shell)
+		return;
 	if ((*shell)->envp_cpy)
 		free_array((*shell)->envp_cpy);
 	if ((*shell)->home_parent_shell)
@@ -26,15 +28,12 @@ void	kill_processes(t_shell **shell)
 {
 	t_cmd	*cmd;
 
-	if ((*shell)->status != INTERNAL_ERROR || !(*shell)->process_level)
-		return ;
+	if (!shell || !*shell || (*shell)->status != INTERNAL_ERROR || !(*shell)->process_level)
+		return;
 	cmd = (*shell)->commands;
-	if (!cmd)
-		return ;
 	while (cmd)
 	{
-		if (cmd->exec & PROCESS_FORKED
-				&& kill(cmd->pid, SIGKILL) == -1)
+		if (cmd->exec & PROCESS_FORKED && kill(cmd->pid, SIGKILL) == -1)
 		{
 			ft_putstr_fd(strerror(errno), STDERR_FILENO);
 			write(STDERR_FILENO, "\n", 1);
@@ -49,25 +48,28 @@ void	built_in_exit(t_shell **shell)
 	t_list	*arg;
 
 	if (!shell || !*shell)
-		exit(ERROR);
-	exit_status = (*shell)->status < 0 ? ERROR : (*shell)->status;
+		exit(1);
+	exit_status = (*shell)->status < 0 ? 1 : (*shell)->status;
 	arg = built_in_exit_fetch_arg(shell);
 	if (arg)
 	{
 		if (!built_in_exit_within_range(shell, arg->name, &exit_status))
-			error_handler(shell, arg->name, 255, "numeric argument required");
-		if (arg && arg->next && exit_status != 255)
 		{
-			error_handler(shell, NULL, ERROR, "too many arguments");
-			return ;
+			if (shell && *shell)
+				error_handler(shell, arg->name, 255, "numeric argument required");
+		}
+		if (arg->next && exit_status != 255)
+		{
+			if (shell && *shell)
+				error_handler(shell, NULL, 1, "too many arguments");
+			return;
 		}
 	}
 	clear_history();
 	kill_processes(shell);
 	reset_shell(shell);
 	free_shell_component(shell);
-	if (*shell)
-		free(*shell);
+	*shell = NULL;
 	exit(exit_status);
 }
 
@@ -75,7 +77,7 @@ t_list	*built_in_exit_fetch_arg(t_shell **shell)
 {
 	t_list	*curr_arg;
 
-	if (!*(*shell)->current_command)
+	if (!shell || !*shell || !(*shell)->current_command)
 		return (NULL);
 	curr_arg = (*((*shell)->current_command))->args;
 	if (curr_arg && match_str("exit", curr_arg->name, 1))
@@ -87,19 +89,22 @@ t_list	*built_in_exit_fetch_arg(t_shell **shell)
 	return (NULL);
 }
 
-bool	built_in_exit_within_range(t_shell **shell, char *exit_arg,
-									int *exit_status)
+bool	built_in_exit_within_range(t_shell **shell, char *exit_arg, int *exit_status)
 {
 	int	i;
 
+	if (!exit_arg || !exit_status)
+		return (false);
 	i = 0;
 	while (exit_arg[i])
 	{
 		if ((exit_arg[i] == '+' || exit_arg[i] == '-') && i == 0)
 			i++;
-		else if (ft_isalnum(exit_arg[i]) != 2)
+		else if (!isdigit(exit_arg[i]))
 		{
-			*exit_status = 255;
+			*exit_status = 2;  // Ajusta código de saída para 2
+			if (shell && *shell)
+				error_handler(shell, exit_arg, 2, "requer argumento numérico");  // Traduz mensagem de erro
 			return (false);
 		}
 		else
@@ -107,6 +112,9 @@ bool	built_in_exit_within_range(t_shell **shell, char *exit_arg,
 	}
 	*exit_status = ft_atoi(exit_arg);
 	if (*exit_status < 0 || *exit_status > 255)
-		error_handler(shell, exit_arg, 255, "out of range");
+	{
+		if (shell && *shell)
+			error_handler(shell, exit_arg, 255, "out of range");
+	}
 	return (true);
 }

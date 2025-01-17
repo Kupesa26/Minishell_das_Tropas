@@ -46,12 +46,7 @@ char	*prompt(void)
 	char	*input;
 
 	input = NULL;
-	input = readline("paradoxo_da_nintendo$> ");
-	if (!input)
-	{
-		printf("Exiting...\n");
-		exit(0);
-	}
+	input = readline("minishell$> ");
 	return (input);
 }
 

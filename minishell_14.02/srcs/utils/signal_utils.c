@@ -12,11 +12,11 @@
 
 #include "minishell.h"
 
-int	g_signal = 0;
+int g_signal = 0;
 
 void	shell_signals(t_shell **shell)
 {
-	if (signal(SIGQUIT, SIG_IGN) == SIG_ERR)
+	if (signal(SIGQUIT, shell_signal_handler) == SIG_ERR)
 		built_in_exit(shell);
 	if (signal(SIGINT, shell_signal_handler) == SIG_ERR)
 		built_in_exit(shell);
@@ -26,20 +26,12 @@ void	shell_signal_handler(int signal)
 {
 	if (signal == SIGINT)
 	{
-		g_signal = TERM_C;
 		ft_putstr_fd("\n", STDOUT_FILENO);
-		rl_on_new_line();
-		rl_replace_line("", 0);
-		rl_redisplay();
+		prompt();
+		g_signal = TERM_C;
 	}
 	else if (signal == SIGQUIT)
-	{
-		ft_putstr_fd("\b\b  \b\b", STDOUT_FILENO);
-		ft_putstr_fd("Quit (core dumped)\n", STDOUT_FILENO);
-		rl_on_new_line();
-		rl_replace_line("", 0);
-		rl_redisplay();
-	}
+		write(STDOUT_FILENO, "\b\b  \b\b", 6);
 }
 
 void	exec_signals(t_shell **shell)
@@ -57,7 +49,7 @@ void	exec_signal_handler(int signal)
 	if (signal == SIGINT)
 	{
 		g_signal = TERM_C;
-		write(STDOUT_FILENO, "\n", 1);
+		ft_putstr_fd("\n", STDOUT_FILENO);
 	}
 }
 

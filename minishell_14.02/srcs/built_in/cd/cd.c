@@ -21,6 +21,11 @@ void	built_in_cd(t_shell **shell)
 
 	previous = false;
 	arg = (*((*shell)->current_command))->args->next;
+	if (!arg)
+	{
+		error_handler(shell, NULL, ERROR, "unspecified path");
+		return ;
+	}
 	if (arg && arg->next)
 	{
 		error_handler(shell, NULL, ERROR, "too many arguments");
