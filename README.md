@@ -1,9 +1,5 @@
 ## Última alteração
-- Eliandro -> Aquele minishell 14.01 estava podre, tinha mais bugs do que já tiramos ontem (16/01/2025)
-
-- **Nota** -> Esse minishell (14.02) tem um .zip com o testador do minishell, passei a usar após as vossas alterações!!
-
-- **Nota** -> E não apaguei as versões antigas, ao adicionar uma nova, deve sempre ter duas versões no git!
+- Eliandro -> O minishell_v14.04 esta sem erro de norma, so notice de global variable (o que é aceitavél), e tiramos mais alguns erros (esta quase perfeito)
 
 ## Minishell terminado
 - Na pasta **minishell_14.01**
