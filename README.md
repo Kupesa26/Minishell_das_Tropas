@@ -1,8 +1,8 @@
 ## Última alteração
-- Eliandro -> O minishell_v14.04 esta sem erro de norma, so notice de global variable (o que é aceitavél), e tiramos mais alguns erros (esta quase perfeito)
+- Eliandro -> O minishell_v15 esta sem erro de norma, so notice de global variable (o que é aceitavél), e tiramos mais alguns erros (esta quase perfeito)
 
 ## Minishell terminado
-- Na pasta **minishell_14.01**
+- Na pasta **minishell_15**
 - ou
 - [Link Aqui 😏️](https://open.spotify.com/intl-pt/track/5gWwWRLxzkrXSojJ8vcF0b?si=b3964ec890884293)
 - (https://open.spotify.com/playlist/26q41JcbQYhHcAFIZzA4re?si=c89c249c9bb34202).
