@@ -1,5 +1,5 @@
 ## Última alteração
-- **Eliandro** -> O minishell_v16 esta sem **erro de norma**, so notice de global variable (**o que é aceitavél**), tem o comando cd (sem argumentos e com espaco) **não fazendo nada** e exibindo a sua mensagem adquada, e ainda **exibe "^C"** ao clicar **Ctrl+C**, **não faz nada** ao clicar **Ctrl+\** e **sai do minishell** ao clicar **Ctrl+D**
+- **Eliandro** -> O minishell_v16 esta sem **erro de norma**, so notice de global variable (**o que é aceitavél**), tem o comando cd (sem argumentos e com espaco) **não fazendo nada** e exibindo a sua mensagem adquada, e ainda **exibe "^C"** ao clicar **Ctrl+C**, **não faz nada** ao clicar **Ctrl+\ e sai do minishell** ao clicar **Ctrl+D**
 
 - O minishell está pago 👌
 
