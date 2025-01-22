@@ -1,8 +1,10 @@
 ## Última alteração
-- Eliandro -> O minishell_v15 esta sem erro de norma, so notice de global variable (o que é aceitavél), e tiramos mais alguns erros (esta quase perfeito)
+- **Eliandro** -> O minishell_v16 esta sem **erro de norma**, so notice de global variable (**o que é aceitavél**), tem o comando cd (sem argumentos e com espaco) **não fazendo nada** e exibindo a sua mensagem adquada, e ainda **exibe "^C"** ao clicar **Ctrl+C**, **não faz nada** ao clicar **Ctrl+\ **e **sai do minishell** ao clicar **Ctrl+D**
+
+- O minishell está pago 👌
 
 ## Minishell terminado
-- Na pasta **minishell_15**
+- Na pasta **minishell_16**
 - ou
 - [Link Aqui 😏️](https://open.spotify.com/intl-pt/track/5gWwWRLxzkrXSojJ8vcF0b?si=b3964ec890884293)
 - (https://open.spotify.com/playlist/26q41JcbQYhHcAFIZzA4re?si=c89c249c9bb34202).
