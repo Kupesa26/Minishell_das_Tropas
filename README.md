@@ -1,14 +1,7 @@
-## Última alteração
-- **Eliandro** -> O minishell_v16 esta sem **erro de norma**, so notice de global variable (**o que é aceitavél**), tem o comando cd (sem argumentos e com espaco) **não fazendo nada** e exibindo a sua mensagem adquada, e ainda **exibe "^C"** ao clicar **Ctrl+C**, **não faz nada** ao clicar **Ctrl+\ e sai do minishell** ao clicar **Ctrl+D**
+## ALTERAÇÃO MUITO IMPORTANTE
+- Pessoal, aquele **minishell**, após avalição de bué de wy aqui, tem bué de bugs que estavam ocultos, porém como não entendia bem o codigo, por ser muito grande e não ser meu, decidi pegar um minishell que trabalhava em casa para fins de aprendizagem sobre minishell com o **Gerson**, otimizei ele e o aprimorei para ser o nosso minishell definitivo. 👌
 
-- O minishell está pago 👌
-
-## Minishell terminado
-- Na pasta **minishell_16**
-- ou
-- [Link Aqui 😏️](https://open.spotify.com/intl-pt/track/5gWwWRLxzkrXSojJ8vcF0b?si=b3964ec890884293)
-- (https://open.spotify.com/playlist/26q41JcbQYhHcAFIZzA4re?si=c89c249c9bb34202).
-
+- Atualmente ele é o minishell_v2.2, após alguns testes meus e de outros wys aqui na 42, vou lançar a versao 2.3 com melhorias e correção de bugs (se existirem, claro). Por agora é tudo, boa sorte no vosso estudo ai, ele esta bué simples! 👌
 
 # Minishell_das_Tropas
 
