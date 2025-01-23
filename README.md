@@ -1,11 +1,13 @@
 ## ALTERAÇÃO MUITO IMPORTANTE
 - Pessoal, aquele **minishell**, após avalição de bué de wy aqui, tem bué de bugs que estavam ocultos, porém como não entendia bem o codigo, por ser muito grande e não ser meu, decidi pegar um minishell que trabalhava em casa para fins de aprendizagem sobre minishell com o **Gerson**, otimizei ele e o aprimorei para ser o nosso minishell definitivo. 👌
 
-- Atualmente ele é o minishell_v2.2, após alguns testes meus e de outros wys aqui na 42, vou lançar a versao 2.3 com melhorias e correção de bugs (se existirem, claro). Por agora é tudo, boa sorte no vosso estudo ai, ele esta bué simples! 👌
+- Atualmente ele é o minishell_v2.2, depois de alguns testes meus e de outros wys aqui na 42, concluimos que ele **"Tá Pago 👌"**. 
+
+- Por agora é tudo, boa sorte no vosso estudo ai, ele esta bué simples! 👌
 
 # Minishell_das_Tropas
 
-O *minishell* é um projeto da Escola 42 que consiste na implementação de um shell simples em C. O objetivo principal é entender como um shell funciona, lidando com entrada e saída de comandos do usuário, criação e manipulação de processos, além de implementar recursos básicos como pipes, redirecionamento de arquivos e variáveis de ambiente.
+O **minishell** é um projeto da Escola 42 que consiste na implementação de um shell simples em C. O objetivo principal é entender como um shell funciona, lidando com entrada e saída de comandos do usuário, criação e manipulação de processos, além de implementar recursos básicos como pipes, redirecionamento de arquivos e variáveis de ambiente.
 
 ## Objetivo
 
